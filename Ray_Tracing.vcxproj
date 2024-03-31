@@ -127,16 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="ray.cpp" />
-    <ClCompile Include="Ray_Tracing.cpp" />
-    <ClCompile Include="vec3.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\ray.cpp" />
+    <ClCompile Include="src\Ray_Tracing.cpp" />
+    <ClCompile Include="src\vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="ray.hpp" />
-    <ClInclude Include="typedefs.hpp" />
-    <ClInclude Include="vec3.hpp" />
+    <ClInclude Include="src\Sphere.h" />
+    <ClInclude Include="src\camera.hpp" />
+    <ClInclude Include="src\Utils.h" />
+    <ClInclude Include="src\ray.hpp" />
+    <ClInclude Include="src\typedefs.hpp" />
+    <ClInclude Include="src\vec3.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
