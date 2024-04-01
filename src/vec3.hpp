@@ -17,17 +17,20 @@
 /// </summary>
 class vec3
 {
+public:
+	float length;
 private:
 	float _x;
 	float _y;
 	float _z;
 
+
 public:
 	vec3(float x, float y, float z);
-	vec3(vec3 const& other) : _x(other._x), _y(other._y), _z(other._z) {}	
-	vec3() : _x(0), _y(0), _z(0) {}
-	vec3(float val) : _x(val), _y(val), _z(val) {}
-	vec3(float x, float y) : _x(x), _y(y), _z(0) {}
+	vec3(vec3 const& other) : _x(other._x), _y(other._y), _z(other._z) { length = this->getLength(); }
+	vec3() : _x(0), _y(0), _z(0) {length = this->getLength();}
+	vec3(float val) : _x(val), _y(val), _z(val) {length = this->getLength();}
+	vec3(float x, float y) : _x(x), _y(y), _z(0) {length = this->getLength();}
 	
 	inline float get_x() const { return _x; }
 	inline float get_y() const { return _y; }
@@ -49,11 +52,11 @@ public:
 	vec3 operator/(float scalar) const {
 		return vec3( _x/ scalar,  _y / scalar,  _z / scalar);
 	}
-	float length() const {
+	float getLength() const {
 		return sqrt(_x * _x + _y * _y + _z * _z);
 	}
 	vec3 unit_vector() const {
-		float length = this->length();
+		float length = this->getLength();
 		return vec3(_x /length , _y / length, _z / length);
 	}
 	vec3 operator*(vec3 other) const {

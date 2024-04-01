@@ -53,14 +53,16 @@ color Camera::RayColor(ray r, std::stringstream *log_string)
 	Sphere sphere (point(0, 0, -3), 1.0);
 	sphere.Color = color(1.0, 1.0, 0);
 
-	Sphere sphere2(point(0, 1.0, -2), 0.2);
+	/*Sphere sphere2(point(0, 1.0, -2), 0.2);
 	sphere2.Color = color(1.0, 0.0, 0);
 	if (sphere2.isRayHitSpehere(r)) {
 		return sphere2.Color;	
-	}
-	if (sphere.isRayHitSpehere(r)) {
+	}*/
+	float t = sphere.isRayHitSpehere(r);
+	if (t>0.0) {
+		vec3 N = (r.at(t) - sphere.center).unit_vector();
 		
-		return sphere.Color;
+		return color(abs(N.get_x()), abs(N.get_y()), abs(N.get_z())) ;
 
 	}
 	vec3 unit_direction = r.getDirection().unit_vector();

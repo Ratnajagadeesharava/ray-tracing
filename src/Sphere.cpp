@@ -6,7 +6,7 @@ Sphere::Sphere(point center, float radius) :center(center), radius(radius)
 Sphere::~Sphere()
 {
 }
-bool Sphere::isRayHitSpehere( const ray r)
+float Sphere::isRayHitSpehere(  ray r)
 {
 	vec3 direction = r.getDirection();
 	vec3 origin = r.getOrigin();
@@ -16,7 +16,8 @@ bool Sphere::isRayHitSpehere( const ray r)
 	float c = oc.dot(oc) - radius * radius;
 	float k = b * b - 4 * a * c;
 	if (k < 0) {
-		return false;
+		return -1.0;
 	}
-	return true;
+	float t1 = (-b - sqrt(k)) / (2.0 * a);
+	return t1;
 }

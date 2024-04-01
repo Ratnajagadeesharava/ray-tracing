@@ -5,13 +5,14 @@ class Sphere
 {
 public: 
 	color Color = color(1.0, 1.0, 0);
+	point center;
 	public:
 	Sphere(point center,float radius);
 	~Sphere();
-	bool isRayHitSpehere(const ray r);
+	float isRayHitSpehere( ray r);
 	
 private:
-	point center;
+	
 	float radius;
 };
 
