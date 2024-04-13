@@ -127,17 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Hittable_List.cpp" />
     <ClCompile Include="src\Sphere.cpp" />
     <ClCompile Include="src\camera.cpp" />
-    <ClCompile Include="src\ray.cpp" />
     <ClCompile Include="src\Ray_Tracing.cpp" />
     <ClCompile Include="src\vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Hittable_List.hpp" />
     <ClInclude Include="src\Hittable.hpp" />
+    <ClInclude Include="src\Interval.h" />
     <ClInclude Include="src\Sphere.h" />
     <ClInclude Include="src\camera.hpp" />
-    <ClInclude Include="src\Utils.h" />
     <ClInclude Include="src\ray.hpp" />
     <ClInclude Include="src\typedefs.hpp" />
     <ClInclude Include="src\vec3.hpp" />

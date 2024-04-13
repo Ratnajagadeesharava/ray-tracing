@@ -1,21 +1,20 @@
+
 #pragma once
+
 #include "typedefs.hpp"
 class ray
 {
 public:
-	
+    ray(const point& origin, const vec3& direction)
+        : o(origin), d(direction)
+    {
+    }
 
-	ray(point origin,vec3 direction);
+    point getOrigin() const { return o; }
+    vec3 getDirection() const { return d; }
+    point at(float t) const { return o + d * t; }
 
-	inline point getOrigin() const { return o; }
-	inline vec3 getDirection() const { return d; }
-	inline point at(float t) {
-		return o + d * t;
-	}
-
-private :
-	point o;
-	//
-	vec3 d;
+private:
+    point o;
+    vec3 d;
 };
-

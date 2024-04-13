@@ -1,8 +1,6 @@
 #pragma once
 #include "typedefs.hpp"
-#include "ray.hpp"
-#include "Hittable.hpp"
-
+#include  "ray.hpp"
 class Sphere : public Hittable
 {
 public: 
@@ -13,7 +11,7 @@ public:
 	~Sphere();
 	float isRayHitSpehere( ray r);
 
-	bool hitRecord( ray& r, double t_min, double t_max, Hit_Point& rec) const;
+	bool hitRecord( ray& r, Interval interval, Hit_Point& rec) const override;
 	
 private:
 	

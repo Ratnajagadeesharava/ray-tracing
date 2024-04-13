@@ -1,6 +1,5 @@
 #pragma once
-#include <ostream>
-#include <cmath>
+#include "typedefs.hpp"
 
 class vec3
 {
@@ -10,7 +9,7 @@ private:
 	float _z;
 
 public:
-	vec3(float x, float y, float z) : _x(x), _y(y), _z(z) {}
+	vec3(float x, float y, float z);
 	vec3(const vec3& other) : _x(other._x), _y(other._y), _z(other._z) {}
 	vec3() : vec3(0, 0, 0) {}
 	vec3(float val) : vec3(val, val, val) {}
